@@ -3,7 +3,7 @@ import javax.swing.JFrame;
 public class Pong extends JFrame {
 //This is the main class for the game
 
-	static final int WIDTH = 600;
+	static final int WIDTH = 800;
 	static final int HEIGHT = 600;
 	static final String WINDOW_TITLE = "Pong Game V1";
 	
