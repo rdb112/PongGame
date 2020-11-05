@@ -7,8 +7,10 @@ import javax.swing.JPanel;
 
 public class PongPanel extends JPanel implements ActionListener, KeyListener  {
 
+	private final static Color BGCOLOR = Color.BLACK;
+	
 	public PongPanel() {
-		setBackground(Color.BLACK);
+		setBackground(BGCOLOR);
 	}
 	
 	@Override
