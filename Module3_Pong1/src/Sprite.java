@@ -1,10 +1,21 @@
+import java.awt.Color;
+import java.awt.Rectangle;
 
 public class Sprite {
 
 	private int xPosition, yPosition, xVelocity, yVelocity, width, height; // on page sprite class they have "new" next
-	private int initialXPosition, initialYPosition;																		// to setter names.
+	private int initialXPosition, initialYPosition;		
+	private Color colour;// to setter names.
 
-	public int getxPosition() {
+	public Color getColour() {
+		return colour;
+	}
+
+	public void setColour(Color colour) {
+		this.colour = colour;
+	}
+
+	public int getXPosition() {
 		return xPosition;
 	}
 
@@ -12,7 +23,7 @@ public class Sprite {
 		this.xPosition = xPosition;
 	}
 
-	public int getyPosition() {
+	public int getYPosition() {
 		return yPosition;
 	}
 
@@ -77,5 +88,8 @@ public class Sprite {
 		 setXPosition(initialXPosition);
 		 setYPosition(initialYPosition);
 	 }
+	 public Rectangle getRectangle() {
+         return new Rectangle(getXPosition(), getYPosition(), getWidth(), getHeight());
+     }
 
 }
