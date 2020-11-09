@@ -21,7 +21,7 @@
   </class>  
   <class id="3" language="java" name="PongPanel" project="Module3_Pong1" file="/Module3_Pong1/src/PongPanel.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="392" width="218" x="656" y="17"/>    
+    <position height="440" width="218" x="656" y="17"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -30,7 +30,7 @@
   </class>  
   <class id="4" language="java" name="Paddle" project="Module3_Pong1" file="/Module3_Pong1/src/Paddle.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="98" width="112" x="911" y="64"/>    
+    <position height="173" width="112" x="911" y="64"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -39,8 +39,8 @@
   </class>  
   <class id="5" language="java" name="Sprite" project="Module3_Pong1" file="/Module3_Pong1/src/Sprite.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="526" y="586"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    <position height="599" width="157" x="419" y="225"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
@@ -48,8 +48,8 @@
   </class>  
   <enumeration id="6" language="java" name="GameState" project="Module3_Pong1" file="/Module3_Pong1/src/GameState.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1053" y="251"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    <position height="142" width="137" x="1103" y="180"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
@@ -57,25 +57,29 @@
   </enumeration>  
   <enumeration id="7" language="java" name="Player" project="Module3_Pong1" file="/Module3_Pong1/src/Player.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1215" y="242"/>    
+    <position height="-1" width="-1" x="1315" y="229"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </enumeration>  
-  <association id="8">    
+  <generalization id="8">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="5"/>  
+  </generalization>  
+  <association id="9">    
     <end type="SOURCE" refId="3" navigable="false">      
-      <attribute id="9" name="gameState"/>      
-      <multiplicity id="10" minimum="0" maximum="1"/>    
+      <attribute id="10" name="gameState">        
+        <position height="0" width="0" x="118" y="-4"/>      
+      </attribute>      
+      <multiplicity id="11" minimum="0" maximum="1">        
+        <position height="0" width="0" x="118" y="-4"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="6" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="11">    
-    <end type="SOURCE" refId="4"/>    
-    <end type="TARGET" refId="5"/>  
-  </generalization>  
   <generalization id="12">    
     <end type="SOURCE" refId="1"/>    
     <end type="TARGET" refId="5"/>  
