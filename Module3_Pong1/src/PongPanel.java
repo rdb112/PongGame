@@ -46,25 +46,27 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 
 	@Override
 	public void keyPressed(KeyEvent event) {
-		if (event.getKeyCode() == KeyEvent.VK_UP) {
-			paddle2.setyVelocity(-1);
-		} else if (event.getKeyCode() == KeyEvent.VK_DOWN) {
-			paddle2.setyVelocity(1);
-		}
+		
 		if (event.getKeyCode() == KeyEvent.VK_W) {
 			paddle1.setyVelocity(-1);
 		} else if (event.getKeyCode() == KeyEvent.VK_S) {
 			paddle1.setyVelocity(1);
 		}
+		if (event.getKeyCode() == KeyEvent.VK_UP) {
+			paddle2.setyVelocity(-1);
+		} else if (event.getKeyCode() == KeyEvent.VK_DOWN) {
+			paddle2.setyVelocity(1);
+		}
 	}
 
 	@Override
 	public void keyReleased(KeyEvent event) {
-		if (event.getKeyCode() == KeyEvent.VK_UP || event.getKeyCode() == KeyEvent.VK_DOWN) {
-			paddle2.setyVelocity(0);
-		}
+		
 		if (event.getKeyCode() == KeyEvent.VK_W || event.getKeyCode() == KeyEvent.VK_S) {
 			paddle1.setyVelocity(0);
+		}
+		if (event.getKeyCode() == KeyEvent.VK_UP || event.getKeyCode() == KeyEvent.VK_DOWN) {
+			paddle2.setyVelocity(0);
 		}
 
 	}
@@ -78,7 +80,7 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 
 	public void moveObject(Sprite sprite) {
 		sprite.setXPosition(sprite.getXPosition() + sprite.getxVelocity(), getWidth());
-		sprite.setXPosition(sprite.getYPosition() + sprite.getyVelocity(), getHeight());
+		sprite.setYPosition(sprite.getYPosition() + sprite.getyVelocity(), getHeight());
 	}
 
 	public void checkWallBounce() {
@@ -96,9 +98,10 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 	}
 
 	public void resetBall() {
-		if (ball.getXPosition() <= 0) {
-			ball.resetToInitialPosition();
-		}
+//		if (ball.getXPosition() <= 0 || ball.getXPosition() >= getWidth() - ball.getWidth()) { // my change to add second condition after||
+//			ball.resetToInitialPosition();
+//		}
+		ball.resetToInitialPosition();
 	}
 
 	private void update() {
