@@ -3,7 +3,7 @@
   associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
   <class id="1" language="java" name="Ball" project="Module3_Pong1" file="/Module3_Pong1/src/Ball.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="158" width="117" x="272" y="29"/>    
+    <position height="158" width="117" x="894" y="-53"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -12,7 +12,7 @@
   </class>  
   <class id="2" language="java" name="Pong" project="Module3_Pong1" file="/Module3_Pong1/src/Pong.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="165" width="149" x="424" y="29"/>    
+    <position height="165" width="149" x="422" y="-127"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -21,7 +21,7 @@
   </class>  
   <class id="3" language="java" name="Paddle" project="Module3_Pong1" file="/Module3_Pong1/src/Paddle.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="173" width="112" x="911" y="64"/>    
+    <position height="173" width="112" x="902" y="253"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -30,7 +30,7 @@
   </class>  
   <class id="4" language="java" name="Sprite" project="Module3_Pong1" file="/Module3_Pong1/src/Sprite.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="599" width="157" x="419" y="225"/>    
+    <position height="599" width="157" x="1097" y="-76"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -39,7 +39,7 @@
   </class>  
   <enumeration id="5" language="java" name="GameState" project="Module3_Pong1" file="/Module3_Pong1/src/GameState.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="142" width="137" x="1103" y="180"/>    
+    <position height="142" width="137" x="431" y="155"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -48,7 +48,7 @@
   </enumeration>  
   <enumeration id="6" language="java" name="Player" project="Module3_Pong1" file="/Module3_Pong1/src/Player.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1315" y="229"/>    
+    <position height="-1" width="-1" x="343" y="220"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -57,49 +57,65 @@
   </enumeration>  
   <class id="7" language="java" name="PongPanel" project="Module3_Pong1" file="/Module3_Pong1/src/PongPanel.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="716" y="204"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    <position height="703" width="202" x="615" y="-133"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
   <generalization id="8">    
-    <end type="SOURCE" refId="3"/>    
+    <end type="SOURCE" refId="1"/>    
     <end type="TARGET" refId="4"/>  
   </generalization>  
   <association id="9">    
     <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="10" name="gameState"/>      
-      <multiplicity id="11" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="5" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="12">    
-    <end type="SOURCE" refId="1"/>    
-    <end type="TARGET" refId="4"/>  
-  </generalization>  
-  <association id="13">    
-    <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="14" name="paddle1"/>      
-      <multiplicity id="15" minimum="0" maximum="1"/>    
+      <attribute id="10" name="paddle2">        
+        <position height="0" width="0" x="-9" y="189"/>      
+      </attribute>      
+      <multiplicity id="11" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-9" y="189"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="3" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
+  <generalization id="12">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="4"/>  
+  </generalization>  
+  <association id="13">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="14" name="gameState">        
+        <position height="0" width="0" x="-672" y="-25"/>      
+      </attribute>      
+      <multiplicity id="15" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-672" y="-25"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
   <association id="16">    
     <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="17" name="ball"/>      
-      <multiplicity id="18" minimum="0" maximum="1"/>    
+      <attribute id="17" name="ball">        
+        <position height="0" width="0" x="622" y="-82"/>      
+      </attribute>      
+      <multiplicity id="18" minimum="0" maximum="1">        
+        <position height="0" width="0" x="622" y="-82"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="1" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="19">    
     <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="20" name="paddle2"/>      
-      <multiplicity id="21" minimum="0" maximum="1"/>    
+      <attribute id="20" name="paddle1">        
+        <position height="0" width="0" x="-9" y="189"/>      
+      </attribute>      
+      <multiplicity id="21" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-9" y="189"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="3" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
