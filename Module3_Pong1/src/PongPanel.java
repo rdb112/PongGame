@@ -14,7 +14,7 @@ import javax.swing.Timer;
 
 public class PongPanel extends JPanel implements ActionListener, KeyListener {
 
-	private final static Color BGCOLOR = Color.BLACK;
+	private final static Color BGCOLOR = Color.WHITE;
 	private final static int TIMER_DELAY = 5;
 	private final static int BALL_MOVEMENT_SPEED = 2;
 
@@ -23,6 +23,20 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 	private final static int WINNER_FONT_SIZE = 40;
 	private final static String WINNER_FONT_FAMILY = "Serif";
 	private final static String WINNER_TEXT = "WIN!";
+	
+	
+	private final static int AGAIN_TEXT_X = 50;
+	private final static int AGAIN_TEXT_Y = 400;
+	private final static int AGAIN_FONT_SIZE = 30;
+	private final static String AGAIN_FONT_FAMILY = "Serif";
+	private final static String AGAIN_TEXT = "To play again press 'P'!";
+	
+
+	private final static int START_TEXT_X = 40;
+	private final static int START_TEXT_Y = 200;
+	private final static int START_FONT_SIZE = 30;
+	private final static String START_FONT_FAMILY = "Tahoma";
+	private final static String START_TEXT = "Press any key to start game!";
 
 	private final static int XPADDING = 100;
 	private final static int YPADDING = 100;
@@ -79,6 +93,16 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 
 	@Override
 	public void keyPressed(KeyEvent event) {
+
+		if (gameState == gameState.Initialising)
+				gameState = gameState.Playing;
+		if(gameState == gameState.GameOver && event.getKeyCode() == KeyEvent.VK_P) {
+			new Pong();
+			
+		}
+		//if (event.getKeyCode() == KeyEvent.VK_0) {
+			//gameState = gameState.Playing;
+		//}
 
 		if (event.getKeyCode() == KeyEvent.VK_W) {
 			paddle1.setyVelocity(-1);
@@ -152,7 +176,7 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 		switch (gameState) {
 		case Initialising: {
 			createObjects();
-			gameState = GameState.Playing;
+			// gameState = GameState.Playing;
 			ball.setxVelocity(BALL_MOVEMENT_SPEED);
 			ball.setyVelocity(BALL_MOVEMENT_SPEED);
 			break;
@@ -172,6 +196,24 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 		}
 		}
 
+	}
+
+	private void paintStartMessage(Graphics g) {
+
+		if (gameState == GameState.Initialising) {
+			Font startFont = new Font(START_FONT_FAMILY, Font.BOLD, START_FONT_SIZE);
+			g.setFont(startFont);
+			g.drawString(START_TEXT, START_TEXT_X, START_TEXT_Y);
+		}
+	}
+	
+	private void paintAgainMessage(Graphics g) {
+
+		if (gameState == GameState.GameOver) {
+			Font againFont = new Font(AGAIN_FONT_FAMILY, Font.BOLD, AGAIN_FONT_SIZE);
+			g.setFont(againFont);
+			g.drawString(AGAIN_TEXT, AGAIN_TEXT_X, AGAIN_TEXT_Y);
+		}
 	}
 
 	private void paintScores(Graphics g) {
@@ -208,12 +250,14 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		paintDottedLine(g);
+		paintStartMessage(g);
 		if (gameState != GameState.Initialising) {
 			paintSprite(g, ball);
 			paintSprite(g, paddle1);
 			paintSprite(g, paddle2);
 			paintScores(g);
 			paintWinnerMessage(g);
+			paintAgainMessage(g);
 		}
 
 		// g.setColor(Color.WHITE);
@@ -224,7 +268,7 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 		Graphics2D g2d = (Graphics2D) g.create();
 		Stroke dashed = new BasicStroke(3, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL, 0, new float[] { 9 }, 0);
 		g2d.setStroke(dashed);
-		g2d.setPaint(Color.WHITE);
+		g2d.setPaint(Color.BLACK);
 		g2d.drawLine(getWidth() / 2, 0, getWidth() / 2, getHeight());
 		g2d.dispose();
 	}
